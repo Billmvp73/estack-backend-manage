@@ -12,7 +12,8 @@ use estackdb;
 -- table structures
 -- -----------------------------------------------
 
-create table users (
+CREATE TABLE users (
+                       id BIGINT(20) NOT NULL AUTO_INCREMENT,
                        uname VARCHAR(40),
                        email VARCHAR(40) NOT NULL,
                        password VARCHAR(256) NOT NULL,
@@ -21,21 +22,27 @@ create table users (
                        birthdate DATE,
                        street VARCHAR(200),
                        city VARCHAR(85),
-                       state CHAR(2) CHECK(length(state) = 2),
-                       zip_code CHAR(5) CHECK(length(Zip_Code) = 5),
-                       PRIMARY KEY (email),
-                       unique key (street, city, state, zip_code),
-                       unique key(uname)
-) engine = innodb;
+                       state CHAR(2) CHECK(LENGTH(state) = 2),
+                       zip_code CHAR(5) CHECK(LENGTH(zip_code) = 5),
+                       created DATETIME NULL,
+                       updated DATETIME NULL.
+                       PRIMARY KEY(id),
+                       UNIQUE KEY(email),
+                       UNIQUE KEY (street, city, state, zip_code),
+                       UNIQUE KEY(uname)
+) ENGINE=INNODB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8;
 
-create table owners (
+CREATE TABLE owners (
+                        id BIGINT(20) NOT NULL AUTO_INCREMENT,
+                        user_id BIGINT(20) NOT NULL,
                         email VARCHAR(40) NOT NULL,
-                        cvv VARCHAR(4) CHECK(length(cvv) = 3 or length(cvv) = 4),
-                        card_number VARCHAR(23) CHECK(length(card_number) >= 9),
+                        cvv VARCHAR(4) CHECK(LENGTH(cvv) = 3 or LENGTH(cvv) = 4),
+                        card_number VARCHAR(23) CHECK(LENGTH(card_number) >= 9),
                         expiration_date DATE,
-                        upgraded BOOLEAN default false,
-                        PRIMARY KEY (email)
-) engine = innodb;
+                        upgraded BOOLEAN DEFAULT FALSE,
+                        PRIMARY KEY (id),
+                        FOREIGN KEY(user_id) REFERENCES users(id)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 create table landlords (
                            email VARCHAR(40) NOT NULL,
