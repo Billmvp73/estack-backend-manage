@@ -13,4 +13,16 @@ public interface ApiUserManageService {
      * 1: succeed
      */
     int addUsers(Users users);
+
+    /**
+     * get a user given his/her email
+     *
+     * @param key: a given column, either 'email' or 'uname'
+     * @param password: the password of this user
+     * @param keyType: integer 0: email, 1: uname
+     *
+     * @return null: no user with that email
+     * users: succeed
+     */
+    Users getUsers(String key, String password, int keyType);
 }

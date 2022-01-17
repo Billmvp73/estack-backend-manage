@@ -13,6 +13,12 @@ public class ApiUserManageServiceImpl implements ApiUserManageService{
 
     @Override
     public int addUsers(Users users){
+
         return this.userManageService.addUsers(users);
+    }
+
+    @Override
+    public Users getUsers(String key, String password, int keyType){
+        return this.userManageService.getUsers(key, password, keyType);
     }
 }
