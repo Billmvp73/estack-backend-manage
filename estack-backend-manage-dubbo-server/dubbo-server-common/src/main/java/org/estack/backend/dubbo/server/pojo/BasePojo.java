@@ -1,2 +1,12 @@
-package org.estack.backend.dubbo.server.pojo;public class BasePojo {
+package org.estack.backend.dubbo.server.pojo;
+
+import lombok.Data;
+
+import java.util.Date;
+
+@Data
+public abstract class BasePojo implements java.io.Serializable {
+
+    private Date created;
+    private Date updated;
 }

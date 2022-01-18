@@ -18,8 +18,8 @@
     </properties>
 
     <modules>
-        <module>dubbo-server-user-manage-dubbo-interface</module>
-        <module>dubbo-server-user-manage-dubbo-service</module>
+        <module>dubbo-server-user-manage-interface</module>
+        <module>dubbo-server-user-manage-service</module>
     </modules>
 
     <dependencies>
@@ -40,6 +40,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.estack.backend</groupId>
+            <artifactId>dubbo-server-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

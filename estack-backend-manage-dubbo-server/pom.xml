@@ -12,9 +12,10 @@
     <artifactId>estack-backend-manage-dubbo-server</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>estack-backend-manage-dubbo-server-house-resources</module>
-        <module>estack-backend-manage-dubbo-server-generator</module>
+        <module>dubbo-server-house-resources</module>
+        <module>dubbo-server-generator</module>
         <module>dubbo-server-user-manage</module>
+        <module>dubbo-server-common</module>
     </modules>
 
     <properties>

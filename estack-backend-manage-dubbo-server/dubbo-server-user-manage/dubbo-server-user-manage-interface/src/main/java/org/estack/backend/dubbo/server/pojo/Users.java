@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.estack.backend.dubbo.server.pojo.BasePojo;
 
 import java.time.LocalDate;
 

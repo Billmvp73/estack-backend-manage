@@ -7,26 +7,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="estack-backend-manage-dubbo-server-house-resources-dubbo-interface" />
         <module name="dubbo-server-user-manage-service" />
-        <module name="estack-backend-manage-dubbo-server-house-resources-dubbo-service" />
         <module name="dubbo-server-user-manage-interface" />
-        <module name="estack-backend-manage-dubbo-server-generator" />
         <module name="estack-backend-manage-api-server" />
+        <module name="dubbo-server-house-resources-interface" />
+        <module name="dubbo-server-house-resources-service" />
+        <module name="dubbo-server-generator" />
+        <module name="dubbo-server-common" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dubbo-server-common" options="-parameters" />
+      <module name="dubbo-server-generator" options="-parameters" />
+      <module name="dubbo-server-house-resources" options="-parameters" />
+      <module name="dubbo-server-house-resources-interface" options="-parameters" />
+      <module name="dubbo-server-house-resources-service" options="-parameters" />
       <module name="dubbo-server-user-manage" options="-parameters" />
       <module name="dubbo-server-user-manage-interface" options="-parameters" />
       <module name="dubbo-server-user-manage-service" options="-parameters" />
       <module name="estack-backend-manage-api-server" options="-parameters" />
       <module name="estack-backend-manage-dubbo-server" options="-parameters" />
-      <module name="estack-backend-manage-dubbo-server-generator" options="-parameters" />
-      <module name="estack-backend-manage-dubbo-server-house-resources" options="-parameters" />
-      <module name="estack-backend-manage-dubbo-server-house-resources-dubbo-interface" options="-parameters" />
-      <module name="estack-backend-manage-dubbo-server-house-resources-dubbo-service" options="-parameters" />
     </option>
   </component>
 </project>

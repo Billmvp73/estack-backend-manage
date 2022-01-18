@@ -1,8 +1,8 @@
 package org.estack.backend.dubbo.server.service.impl;
 
 import org.apache.commons.lang3.StringUtils;
-import org.estack.backend.dubbo.server.pojo.BasePojo;
 import org.estack.backend.dubbo.server.pojo.Users;
+import org.estack.backend.dubbo.server.service.BaseServiceImpl;
 import org.estack.backend.dubbo.server.service.UserManageService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -25,7 +25,7 @@ CREATE TABLE users (
                        state CHAR(2) CHECK(LENGTH(state) = 2),
                        zip_code CHAR(5) CHECK(LENGTH(zip_code) = 5),
                        created DATETIME NULL,
-                       updated DATETIME NULL.
+                       updated DATETIME NULL,
                        PRIMARY KEY(id),
                        UNIQUE KEY(email),
                        UNIQUE KEY (street, city, state, zip_code),
@@ -63,38 +63,46 @@ create table customers (
 ) engine = innodb;
 
 
-create table properties (
+CREATE TABLE properties (
+                            id BIGINT(20) NOT NULL AUTO_INCREMENT,
+                            ownerId BIGINT(20) NOT NULL,
     -- address
                             street VARCHAR(200) NOT NULL,
                             city VARCHAR(85) NOT NULL,
-                            state CHAR(2) NOT NULL CHECK(length(State) = 2),
-                            zip CHAR(5) NOT NULL CHECK(length(Zip) = 5),
-                            lat decimal(6, 2),
-                            lng decimal(6, 2),
+                            state CHAR(2) NOT NULL CHECK(length(state) = 2),
+                            zipCode CHAR(5) NOT NULL CHECK(length(zipCode) = 5),
 
-                            type VARCHAR(20) NOT NULL,
+-- information and details
+                            propertyType VARCHAR(20) NOT NULL,
+                            yearBuilt DATE,
                             numBedrooms INT NOT NULL CHECK (numBedrooms >= 1),
                             numBathrooms INT NOT NULL CHECK (numBathrooms >= 1),
+                            dateAvailable DATE,
+                            leaseDuration INT,
                             squareft DECIMAL(6, 2) NOT NULL CHECK (squareft >= 0),
-                            yearBuilt DATE,
-                            garageParking INT,
+                            -- amentities and rules
                             ac BOOLEAN,
-                            wheelChairAcces BOOLEAN,
-                            offStreetParking BOOLEAN,
-                            balcony BOOLEAN,
                             furnished BOOLEAN,
+                            balcony BOOLEAN,
                             hardWood BOOLEAN,
-                            listingPrice DECIMAL(10, 2),
+                            wheelChairAcces BOOLEAN,
+                            garageParking BOOLEAN,
+                            offStreetParking BOOLEAN,
+                            -- image attachment
+                            imgFile VARCHAR(255),
+                            -- worth
+                            monthlyRent DECIMAL(10, 2),
+                            deposit DECIMAL(10, 2),
+                            cleaningFee DECIMAL(10, 2),
+                            -- description
+                            description VARCHAR(500),
 
-                            property_name VARCHAR(50) NOT NULL,
-                            owner_email VARCHAR(50) NOT NULL,
-                            description VARCHAR(500) NOT NULL,
-    -- image file name
-                            filename VARCHAR(64),
-                            PRIMARY KEY (property_Name, owner_Email),
-                            FOREIGN KEY (Owner_Email) REFERENCES owners (email),
-                            UNIQUE KEY (street, city, state, zip)
-);
+                            created DATETIME NULL,
+                            updated DATETIME NULL,
+                            PRIMARY KEY (id),
+                            FOREIGN KEY (owner_id) REFERENCES users (id),
+                            UNIQUE KEY (street, city, state, zipCode)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
 

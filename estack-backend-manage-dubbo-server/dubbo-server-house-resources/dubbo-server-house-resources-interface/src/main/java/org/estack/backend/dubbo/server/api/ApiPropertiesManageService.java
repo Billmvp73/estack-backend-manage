@@ -2,7 +2,7 @@ package org.estack.backend.dubbo.server.api;
 
 import org.estack.backend.dubbo.server.pojo.Properties;
 
-public interface ApiPropertyManageService {
+public interface ApiPropertiesManageService {
 
     /**
      * add new properties
