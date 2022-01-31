@@ -1,4 +1,5 @@
 package org.estack.backend.dubbo.server.pojo;
+import org.estack.backend.dubbo.server.pojo.BasePojo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

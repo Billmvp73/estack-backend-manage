@@ -1,19 +1,17 @@
 package org.estack.backend.dubbo.api.controller;
 
 import org.estack.backend.dubbo.api.service.PropertiesManageService;
+import org.estack.backend.dubbo.api.vo.TableResult;
 import org.estack.backend.dubbo.server.pojo.Properties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("properties/addProperties")
-public class addPropertiesController {
+@RequestMapping("manage/properties")
+public class PropertiesController {
     @Autowired
     private PropertiesManageService propertiesManageService;
 
@@ -38,5 +36,22 @@ public class addPropertiesController {
             e.printStackTrace();
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+
+    /**
+     *  query property list
+     * @param properties
+     * @param currentPage
+     * @param pageSize
+     * @return
+     */
+    @GetMapping
+    @ResponseBody
+    public ResponseEntity<TableResult> listProperties(Properties properties,
+                                                      @RequestParam(name = "currentPage",
+                                                              defaultValue = "1") Integer currentPage,
+                                                      @RequestParam(name = "pageSize",
+                                                            defaultValue = "10") Integer pageSize){
+        return ResponseEntity.ok(this.propertiesManageService.queryList(properties, currentPage, pageSize));
     }
 }

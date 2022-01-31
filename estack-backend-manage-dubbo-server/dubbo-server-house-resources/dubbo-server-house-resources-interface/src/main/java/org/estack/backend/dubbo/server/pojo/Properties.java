@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.time.LocalDate;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -20,6 +21,7 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
+@TableName("properties")
 public class Properties extends BasePojo {
 
     private static final long serialVersionUID = 779152022777511825L;
@@ -27,8 +29,8 @@ public class Properties extends BasePojo {
     @TableId(value="id", type= IdType.AUTO)
     private Long id;
 
-    @TableField("ownerId")
-    private int ownerId;
+//    @TableField("ownerId")
+//    private int ownerId;
 
     private String street;
 

@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
-public class DubboProvider {
+public class DubboUsersProvider {
     public static void main(String[] args){
-        new SpringApplicationBuilder(DubboProvider.class)
+        new SpringApplicationBuilder(DubboUsersProvider.class)
                 .web(WebApplicationType.NONE) // non-web application
                 .run(args);
     }

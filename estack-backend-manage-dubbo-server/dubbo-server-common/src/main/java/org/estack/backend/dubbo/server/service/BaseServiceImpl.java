@@ -121,4 +121,16 @@ public abstract class BaseServiceImpl<T extends BasePojo> {
     public Integer deleteByWhere(T record) {
         return this.mapper.delete(new QueryWrapper<>(record));
     }
+
+    /**
+     * query data list given query condition
+     * @param queryWrapper
+     * @param page
+     * @param rows
+     * @return
+     */
+    public IPage<T> queryPageList(QueryWrapper<T> queryWrapper, Integer page, Integer rows){
+        //get pagination
+        return this.mapper.selectPage(new Page<T>(page, rows), queryWrapper);
+    }
 }

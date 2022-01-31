@@ -100,7 +100,7 @@ CREATE TABLE properties (
                             created DATETIME NULL,
                             updated DATETIME NULL,
                             PRIMARY KEY (id),
-                            FOREIGN KEY (owner_id) REFERENCES users (id),
+                            /* FOREIGN KEY (owner_id) REFERENCES users (id), */
                             UNIQUE KEY (street, city, state, zipCode)
 ) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 

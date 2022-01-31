@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service
-public class UserManageServiceImpl extends BaseServiceImpl implements UserManageService{
+public class UserManageServiceImpl extends BaseServiceImpl<Users> implements UserManageService{
     /**
      * add new user
      *

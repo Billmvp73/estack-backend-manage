@@ -1,6 +1,7 @@
 package org.estack.backend.dubbo.server.service;
 
 import org.estack.backend.dubbo.server.pojo.Properties;
+import org.estack.backend.dubbo.server.vo.PageInfo;
 
 public interface PropertiesManageService {
 
@@ -14,4 +15,6 @@ public interface PropertiesManageService {
      * 1: succeed
      */
     int addProperties(Properties properties);
+
+    PageInfo<Properties> queryPropertiesList(int page, int pageSize, Properties queryCondition);
 }
