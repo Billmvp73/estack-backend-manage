@@ -1,5 +1,5 @@
 package org.estack.backend.dubbo.server.pojo;
-import org.estack.backend.dubbo.server.pojo.BasePojo;
+
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-public class UserRequest extends BasePojo {
+public class UserRequest{
     private String key;
 
     private int keyType;

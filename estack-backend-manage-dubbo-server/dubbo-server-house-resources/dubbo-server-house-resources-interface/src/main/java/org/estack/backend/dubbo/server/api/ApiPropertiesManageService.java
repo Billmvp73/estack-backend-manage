@@ -16,6 +16,8 @@ public interface ApiPropertiesManageService {
      */
     int addProperties(Properties properties);
 
+    boolean updateProperties(Properties properties);
+
 
     /**
      * query properties list by pages given query condition

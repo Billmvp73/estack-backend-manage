@@ -107,14 +107,14 @@ CREATE TABLE properties (
 
 
 -- users (uname, email, password, fname, lname, birthdate, street, city, state, zip_code)
-insert into users values
-                      ('jstone5', 'jared@gmail.com', 'passwordP!', 'Jared', 'Stone', '1961-01-06', '101 Five Finger Way', 'Atlanta', 'GA', '30333'),
-                      ('johnDoe1', 'JohnD1@gmail.com', 'passwordP!', 'John', 'Doe', '1999-12-31', '123 Maple Street', 'Anytown', 'PA', '20522'),
-                      (NULL, 'sarahprince@gmail.com', 'passwordP!', 'Sarah', 'Prince', NULL,  NULL, NULL, NULL, NULL);
+-- insert into users values
+--                       ('jstone5', 'jared@gmail.com', 'passwordP!', 'Jared', 'Stone', '1961-01-06', '101 Five Finger Way', 'Atlanta', 'GA', '30333'),
+--                       ('johnDoe1', 'JohnD1@gmail.com', 'passwordP!', 'John', 'Doe', '1999-12-31', '123 Maple Street', 'Anytown', 'PA', '20522'),
+--                       (NULL, 'sarahprince@gmail.com', 'passwordP!', 'Sarah', 'Prince', NULL,  NULL, NULL, NULL, NULL);
 
-insert into owners values
-                       ('jared@gmail.com', '123', '4040 4040 4040 4040 404', '1920-03-01', false),
-                       ('JohnD1@gmail.com', '1234', '1234 5678', '2022-01-01', false);
+-- insert into owners values
+--                        ('jared@gmail.com', '123', '4040 4040 4040 4040 404', '1920-03-01', false),
+--                        ('JohnD1@gmail.com', '1234', '1234 5678', '2022-01-01', false);
 
 -- insert into properties values
 -- ('Front Street', 'Ann Arbor', 'MI', '40044', "Apartment", 2, 2, 860, '1980-01-01', 5, true, true, true, true, true, true, 200000.43, "White House", "jared@gmail.com", "This is the first selling house!", NULL);

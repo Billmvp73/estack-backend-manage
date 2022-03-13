@@ -16,5 +16,16 @@ public interface PropertiesManageService {
      */
     int addProperties(Properties properties);
 
+    /**
+     * update new properties
+     *
+     * @param properties
+     *
+     * @return -1: the format of parameter is wrong
+     * 0: fail to insert new properties into database
+     * 1: succeed
+     */
+    boolean updateProperties(Properties properties);
+
     PageInfo<Properties> queryPropertiesList(int page, int pageSize, Properties queryCondition);
 }

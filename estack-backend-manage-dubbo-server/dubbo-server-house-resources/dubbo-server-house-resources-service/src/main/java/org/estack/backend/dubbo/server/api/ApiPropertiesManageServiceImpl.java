@@ -13,7 +13,13 @@ public class ApiPropertiesManageServiceImpl implements ApiPropertiesManageServic
 
     @Override
     public int addProperties(Properties properties){
+
         return this.propertiesManageService.addProperties(properties);
+    }
+
+    @Override
+    public boolean updateProperties(Properties properties){
+        return this.propertiesManageService.updateProperties(properties);
     }
 
     @Override

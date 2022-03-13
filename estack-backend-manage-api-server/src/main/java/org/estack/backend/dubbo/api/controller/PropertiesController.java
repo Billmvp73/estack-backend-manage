@@ -39,6 +39,29 @@ public class PropertiesController {
     }
 
     /**
+     * update new properties
+     *
+     * @param properties
+     *
+     * @return -1: the format of parameter is wrong
+     * 0: fail to insert new properties into database
+     * 1: succeed
+     */
+    @PutMapping
+    @ResponseBody
+    public ResponseEntity<Void> updateProperties(@RequestBody Properties properties){
+        try{
+            boolean bool = this.propertiesManageService.update(properties);
+            if(bool){
+                return ResponseEntity.status(HttpStatus.CREATED).build();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+
+    /**
      *  query property list
      * @param properties
      * @param currentPage

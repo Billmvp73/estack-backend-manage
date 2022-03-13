@@ -18,12 +18,19 @@ public class PropertiesManageService {
         return result == 1;
     }
 
+    public boolean update(Properties properties){
+        boolean result = this.apiPropertiesManageService.updateProperties(properties);
+        return result == true;
+    }
+
     public TableResult<Properties> queryList(Properties properties, Integer currentPage, Integer pageSize){
         PageInfo<Properties> pageInfo = this.apiPropertiesManageService.queryPropertiesList(
                 currentPage, pageSize, properties
         );
         return new TableResult<>(pageInfo.getRecords(), new Pagination(currentPage, pageSize, pageInfo.getTotal()));
     }
+
+
 
 
 }

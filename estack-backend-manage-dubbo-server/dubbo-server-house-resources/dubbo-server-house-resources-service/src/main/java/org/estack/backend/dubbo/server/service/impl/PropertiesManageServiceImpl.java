@@ -31,6 +31,20 @@ public class PropertiesManageServiceImpl extends BaseServiceImpl<Properties> imp
         return super.save(properties);
     }
 
+    /**
+     * update new properties
+     *
+     * @param properties
+     *
+     * @return -1: the format of parameter is wrong
+     * 0: fail to insert new properties into database
+     * 1: succeed
+     */
+    @Override
+    public boolean updateProperties(Properties properties){
+        return super.update(properties) == 1;
+    }
+
     @Override
     public PageInfo<Properties> queryPropertiesList(int page, int pageSize, Properties queryCondition){
         QueryWrapper queryWrapper = new QueryWrapper<>();
