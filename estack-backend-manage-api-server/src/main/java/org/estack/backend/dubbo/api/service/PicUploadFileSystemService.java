@@ -42,8 +42,8 @@ public class PicUploadFileSystemService {
 
         // 生成图片的绝对引用地址
         String picUrl = StringUtils.substringAfter(filePath,
-                        "/root/publish/properties/images");
-        fileUploadResult.setName("/root/publish/properties/images/" + picUrl);
+                        "/root/publish/properties");
+        fileUploadResult.setName("/root/publish/properties" + picUrl);
 
         File newFile = new File(filePath);
 
@@ -65,7 +65,7 @@ public class PicUploadFileSystemService {
     }
 
     private String getFilePath(String sourceFileName) {
-        String baseFolder = "/root/publish/properties/images" + File.separator
+        String baseFolder = "/root/publish/properties" + File.separator
                 + "images";
         Date nowDate = new Date();
         // yyyy/MM/dd
